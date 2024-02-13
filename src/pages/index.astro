@@ -1,5 +1,6 @@
 ---
-
+const clientID = import.meta.env.clientID
+const redirectURL = import.meta.env.redirectURL
 ---
 
 <html lang="ja">
@@ -12,5 +13,6 @@
 	</head>
 	<body>
 		<h1>LINE連携</h1>
+		<a href=`https://notify-bot.line.me/oauth/authorize?response_type=code&client_id=${clientID}&redirect_uri=${redirectURL}&scope=notify&state=state`>ここにリンク</a>
 	</body>
 </html>
