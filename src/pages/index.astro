@@ -1,6 +1,7 @@
 ---
 const clientID = import.meta.env.clientID
 const redirectURL = import.meta.env.redirectURL
+const URL = `https://notify-bot.line.me/oauth/authorize?response_type=code&client_id=${clientID}&redirect_uri=${redirectURL}&scope=notify&state=state`
 ---
 
 <html lang="ja">
@@ -12,7 +13,9 @@ const redirectURL = import.meta.env.redirectURL
 		<title>LINE notify program</title>
 	</head>
 	<body>
-		<h1>LINE連携</h1>
-		<a href=`https://notify-bot.line.me/oauth/authorize?response_type=code&client_id=${clientID}&redirect_uri=${redirectURL}&scope=notify&state=state`>ここにリンク</a>
+		<div class="container mx-auto mt-10">
+			<h1 class="text-red-500 text-4xl font-bold">LINE連携</h1>
+			<a href={URL}>リンク</a>
+		</div>
 	</body>
 </html>
