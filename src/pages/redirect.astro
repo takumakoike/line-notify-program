@@ -7,9 +7,9 @@ const clientSecret = "gjW5lHctAi9XkAKpBNEDsmFBWN3gyMQOfYTNlwYI9F8"
 const postBaseAPI = "https://notify-bot.line.me/oauth/token"
 const param = `grant_type=authorization_code&code=code&redirect_uri=${redirectURL}&client_id=${clientID}&client_secret=${clientSecret}`
 const postEndPoint = postBaseAPI + "?" + param
-// const res = await fetch(postEndPoint).then((response)=>response.json())
+const res = await fetch(postEndPoint).then((response)=>response.json())
 ---
 
 <p>これはリダイレクトするコールバックページです</p>
-{postEndPoint}
+{res}
 <!-- {res} -->
