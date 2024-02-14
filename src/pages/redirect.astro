@@ -1,15 +1,20 @@
 ---
 import {redirectURL} from "./index.astro"
 import {clientID} from "./index.astro"
-// const clientID = "sXsAgy1FepR0VE4FGzJTxQ"
-// const redirectURL = "https://line-notify-program.vercel.app/redirect"
 const clientSecret = "gjW5lHctAi9XkAKpBNEDsmFBWN3gyMQOfYTNlwYI9F8"
+
 const postBaseAPI = "https://notify-bot.line.me/oauth/token"
 const param = `grant_type=authorization_code&code=code&redirect_uri=${redirectURL}&client_id=${clientID}&client_secret=${clientSecret}`
-const postEndPoint = postBaseAPI + "?" + param
-const res = await fetch(postEndPoint).then((response)=>response.json())
+// const postEndPoint = postBaseAPI + "?" + param
 ---
-
-<p>これはリダイレクトするコールバックページです</p>
-{res}
-<!-- {res} -->
+<html>
+ <head><title>リダイレクトページ</title></head>
+ <body onload="javascript:document.forms[0].submit()">
+  <form method="post" action="https://line-notify-program.vercel.app/redirect">
+    <input type="hidden" name="state"
+     value=""/>
+    <input type="hidden" name="id_token"
+     value=""/>
+  </form>
+ </body>
+</html>

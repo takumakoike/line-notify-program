@@ -3,7 +3,7 @@
 // const redirectURL = import.meta.env.redirectURL
 export const clientID = "sXsAgy1FepR0VE4FGzJTxQ"
 export const redirectURL = "https://line-notify-program.vercel.app/redirect"
-const URL = `https://notify-bot.line.me/oauth/authorize?response_type=code&client_id=${clientID}&redirect_uri=${redirectURL}&scope=notify&state=state`
+const URL = `https://notify-bot.line.me/oauth/authorize?response_type=code&client_id=${clientID}&redirect_uri=${redirectURL}&scope=notify&state=state&response_mode=form_post`
 ---
 
 <html lang="ja">
@@ -17,7 +17,7 @@ const URL = `https://notify-bot.line.me/oauth/authorize?response_type=code&clien
 	<body>
 		<div class="container mx-auto mt-10">
 			<h1 class="text-red-500 text-4xl font-bold">LINE連携</h1>
-			<a href={URL}>リンク</a>
+			<a href={URL} target="_blank">リンク</a>
 		</div>
 	</body>
 </html>
